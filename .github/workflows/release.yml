@@ -1,0 +1,17 @@
+name: Create jsdeliver index.min.mjs script
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Run Node.JS Script
+        run: node ./lib/release.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.MAX_TOKEN }}
