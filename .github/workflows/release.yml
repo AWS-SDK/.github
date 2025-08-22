@@ -1,4 +1,4 @@
-name: Create jsdeliver index.min.mjs script
+name: Update all AWS-SDK repos
 on:
   workflow_dispatch:
 jobs:
